@@ -1,0 +1,27 @@
+<h2>Operadores Condicionales</h2>
+
+<h3>find()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/find.PNG">
+        </div>
+        <button (click)="findOperator()">find()</button>
+        
+        <div *ngIf="findExample">
+            <h4>Result:</h4>
+            <pre>{{findExample}}</pre>
+        </div>
+    </div>
+    <div class="operador">
+        <div>
+            <img src="assets/images/simpleFind.PNG">
+        </div>
+        <button (click)="simpleFindOperator()">Iterator.find()</button>
+        
+        <div *ngIf="findExample2">
+            <h4>Result:</h4>
+            <pre>{{findExample2}}</pre>
+        </div>
+    </div>
+</div>

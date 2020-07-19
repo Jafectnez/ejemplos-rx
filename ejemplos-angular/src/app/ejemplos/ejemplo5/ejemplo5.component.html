@@ -1,0 +1,40 @@
+<h2>Operadores Multidifusión</h2>
+
+<h3>tap()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/tap.PNG">
+        </div>
+        <button (click)="tapOperator()">tap()</button>
+        
+        <div *ngIf="tapExample?.length > 0">
+            <h4>Tap:</h4>
+            <pre>{{tapExample}}</pre>
+        </div>
+        
+        <div *ngIf="tapResultExample?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{tapResultExample}}</pre>
+        </div>
+    </div>
+</div>
+<h3>multicast()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/multicast.PNG">
+        </div>
+        
+        <button (click)="multicastOperator()">multicast()</button>
+        <div *ngIf="subcription?.length > 0">
+            <h4>Subcription simple:</h4>
+            <pre>{{subcription}}</pre>
+        </div>
+        
+        <div *ngIf="multicasts?.length > 0">
+            <h4>Multicast:</h4>
+            <pre>{{multicasts}}</pre>
+        </div>
+    </div>
+</div>

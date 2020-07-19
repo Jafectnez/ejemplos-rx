@@ -1,1 +1,70 @@
-<p>ejemplo1 works!</p>
+<h2>Operadores Creación</h2>
+
+<h3>of()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/of.PNG">
+        </div>
+        <button (click)="createOf()">of(args)</button>
+        
+        <div *ngIf="ofExample?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{ofExample}}</pre>
+        </div>
+    </div>
+    
+    <div class="operador">
+        <div>
+            <img src="assets/images/ofMultiple.PNG">
+        </div>
+        <button (click)="createOfMultiple()">of(multipleArgs)</button>
+        
+        <div *ngIf="ofMultipleExample?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{ofMultipleExample}}</pre>
+        </div>
+    </div>
+</div>
+
+<h3>from()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/from.PNG">
+        </div>
+        <button (click)="createFrom()">from(array)</button>
+        
+        <div *ngIf="fromExample?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{fromExample}}</pre>
+        </div>
+    </div>
+    
+    <div class="operador">
+        <div>
+            <img src="assets/images/fromIterator.PNG">
+        </div>
+        <button (click)="createFromGenerator()">from(iterator)</button>
+        
+        <div *ngIf="fromIterator?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{fromIterator}}</pre>
+        </div>
+    </div>
+</div>
+
+<h3>fromEvent()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/fromEvent.PNG">
+        </div>
+        <button (click)="createFromEvent()">fromEvent(document, 'click')</button>
+        
+        <div *ngIf="fromEventExample">
+            <h4>Result:</h4>
+            <pre>{{fromEventExample}}</pre>
+        </div>
+    </div>
+</div>

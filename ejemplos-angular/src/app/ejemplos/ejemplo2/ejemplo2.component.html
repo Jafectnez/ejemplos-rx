@@ -1,0 +1,29 @@
+<h2>Operadores Transformación</h2>
+
+<h3>map()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/map.PNG">
+        </div>
+        <button (click)="transformMap()">map(func)</button>
+        
+        <div *ngIf="mapExample?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{mapExample}}</pre>
+        </div>
+    </div>
+    
+    <div class="operador">
+        <div>
+            <img src="assets/images/simpleMap.PNG">
+        </div>
+
+        <button (click)="transformMapSimple()">Iterable.map(func)</button>
+        
+        <div *ngIf="mapIterableExample?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{mapIterableExample}}</pre>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<h2>Operadores Filtrado</h2>
+
+<h3>filter()</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/filter.PNG">
+        </div>
+        <button (click)="filterOperator()">filter(func)</button>
+        
+        <div *ngIf="filterExample?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{filterExample}}</pre>
+        </div>
+    </div>
+    
+    <div class="operador">
+        <div>
+            <img src="assets/images/filter2.PNG">
+        </div>
+        <button (click)="filterOperator2()">filter(func)</button>
+        
+        <div *ngIf="filterExample2?.length > 0">
+            <h4>Result:</h4>
+            <pre>{{filterExample2}}</pre>
+        </div>
+    </div>
+</div>
