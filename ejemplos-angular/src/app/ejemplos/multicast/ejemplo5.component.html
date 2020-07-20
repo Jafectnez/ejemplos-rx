@@ -38,3 +38,23 @@
         </div>
     </div>
 </div>
+<h3>multicast() with URL</h3>
+<div class="operadores">
+    <div class="operador">
+        <div>
+            <img src="assets/images/multicastUrl.PNG">
+        </div>
+        
+        <button (click)="getUrl()">url Simple</button>
+        <button (click)="getMulticastUrl()">multicast url</button>
+        <div *ngIf="urlExample?.length > 0">
+            <h4>Url simple:</h4>
+            <pre>{{urlExample.length}}</pre>
+        </div>
+        
+        <div *ngIf="multicastUrlExample?.length > 0">
+            <h4>Multicast Url:</h4>
+            <pre>{{multicastUrlExample.length}}</pre>
+        </div>
+    </div>
+</div>

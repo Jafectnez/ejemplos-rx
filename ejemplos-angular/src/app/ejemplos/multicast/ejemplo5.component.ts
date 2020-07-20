@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable, Subject, ConnectableObservable } from 'rxjs';
 import { tap, map, multicast, take } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-ejemplo5',
@@ -14,7 +15,13 @@ export class Ejemplo5Component implements OnInit {
 
   subcription: Array<any>;
   multicasts: Array<any>;
-  constructor() { }
+
+  urlExample: Array<any>;
+  multicastUrlExample: Array<any>;
+
+  constructor(
+    private httpService: HttpClient
+  ) { }
 
   ngOnInit(): void {
     this.tapExample = [];
@@ -22,6 +29,9 @@ export class Ejemplo5Component implements OnInit {
 
     this.subcription = [];
     this.multicasts = [];
+
+    this.urlExample = [];
+    this.multicastUrlExample = [];
   }
 
   tapOperator(): void {
@@ -68,5 +78,39 @@ export class Ejemplo5Component implements OnInit {
     });
 
     (multicastObservable as ConnectableObservable<any>).connect();
+  }
+
+  getUrl(): void {
+    const source = this.httpService.get('https://storage.googleapis.com/portal-assets/assets/files/lpa-translations/pt.json');
+
+    source.subscribe(item => {
+      this.urlExample.push(item);
+      console.log('URL simple ', item);
+    });
+
+    source.subscribe(item => {
+      this.urlExample.push(item);
+      console.log('URL simple ', item);
+    });
+  }
+
+  getMulticastUrl(): void {
+    const source = this.httpService.get('https://storage.googleapis.com/portal-assets/assets/files/lpa-translations/es.json');
+
+    const result = source.pipe(
+      multicast(new Subject())
+    );
+
+    result.subscribe(item => {
+      this.multicastUrlExample.push(item);
+      console.log('Multicast URL ', item);
+    });
+
+    result.subscribe(item => {
+      this.multicastUrlExample.push(item);
+      console.log('Multicast URL ', item);
+    });
+
+    (result as ConnectableObservable<any>).connect();
   }
 }
